@@ -18,7 +18,7 @@ from dash.dependencies import Input, Output, State
 #, Event
 
 from plotly.graph_objs import Scatter, Layout, Data, Figure, Bar,Margin
-import copy
+#import copy
 import base64
 
 app = dash.Dash(__name__)
@@ -75,8 +75,8 @@ fig = go.Figure(data = [trace_1], layout = layout)
 #  Layouts
                      
 # Creating layouts for datatable
-layout_right = copy.deepcopy(layout)
-layout_right['height'] = 350
+#layout_right = copy.deepcopy(layout)
+#layout_right['height'] = 350
 #layout_right['margin-top'] = '20'
 #layout_right['font-size'] = '12'
 
@@ -201,7 +201,7 @@ def gen_map(map_data,h,j):
 )
     }
         
-image_filename = 'UP100.jpg' # replace with your own image
+image_filename = 'UP100.png' # replace with your own image
 encoded_image = base64.b64encode(open(image_filename, 'rb').read())   
 #image_filename = 'EY.png' # replace with your own image
 #encoded_image = base64.b64encode(open(image_filename, 'rb').read())   
@@ -349,7 +349,7 @@ app.layout = html.Div([
                         selected_row_indices=[],
                         id='datatable'),
                 ],
-                style=layout_right,
+                style={'height':400},
                 className="six columns"
             ),
             html.Div(
